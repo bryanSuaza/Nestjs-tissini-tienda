@@ -10,11 +10,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  //endpoints sin parametros basicos
-
   @Get('nuevo')
   newEndpoint(): string {
-    //return this.appService.getHello();
     return 'Mi primer endpoint';
   }
 

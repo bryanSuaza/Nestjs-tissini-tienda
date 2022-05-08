@@ -33,7 +33,6 @@ export class UsersController {
     return this.usersService.getUserById(userId);
   }
 
-  //controlador para obtener las ordenes
   @Get(':id/orders')
   getOrders(@Param('id', ParseIntPipe) userId: number) {
     return this.usersService.getOrderByUser(userId);

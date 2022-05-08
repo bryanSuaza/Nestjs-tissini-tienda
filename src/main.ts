@@ -7,8 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
     new ValidationPipe({
-      whitelist: true, // no elimina los campos extras
-      forbidNonWhitelisted: true, // alerta sobre los campos extras
+      whitelist: true,
+      forbidNonWhitelisted: true,
     }),
   );
 
@@ -21,7 +21,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
-  app.enableCors(); // abrir la piticiones desde cualquier lugar o podemos enviarle por parametro las url desde las que permitiremos las peticiones
+  app.enableCors();
   await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
