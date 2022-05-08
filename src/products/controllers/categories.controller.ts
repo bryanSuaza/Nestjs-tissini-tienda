@@ -2,7 +2,6 @@ import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('categories')
 export class CategoriesController {
-
   //recibimos multiples parametros por get
   @Get(':catId/products/:prodId')
   getCategory(
@@ -11,5 +10,4 @@ export class CategoriesController {
   ): string {
     return `categories ${idCategoria} and products ${productoId}`;
   }
-
 }

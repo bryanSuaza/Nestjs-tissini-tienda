@@ -7,7 +7,7 @@ import { IsString } from 'class-validator';
 
 export class createUsersDto {
   @IsString()
-  @ApiProperty({description: 'Este es el nombre del usuario'})
+  @ApiProperty({ description: 'Este es el nombre del usuario' })
   readonly name: string;
 
   @IsString()

@@ -20,9 +20,7 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('products')
 @Controller('products')
 export class ProductsController {
-
-  constructor(private productsService: ProductsService){}
-
+  constructor(private productsService: ProductsService) {}
 
   @Get('filter')
   getProductFilter(): Object {
@@ -43,7 +41,7 @@ export class ProductsController {
   //recibimos un parametro por get y hacemos response con express
   @Get(':id')
   @HttpCode(HttpStatus.ACCEPTED)
-  getOneProduct( @Param('id', ParseIntPipe) productId: number) {
+  getOneProduct(@Param('id', ParseIntPipe) productId: number) {
     return this.productsService.findOne(productId);
   }
 
@@ -55,8 +53,11 @@ export class ProductsController {
 
   //editamos el producto
   @Put(':id')
-  updateProduct(@Param('id') productId: string, @Body() payload: UpdateProductsDto) {
-    return this.productsService.update(+productId,payload);
+  updateProduct(
+    @Param('id') productId: string,
+    @Body() payload: UpdateProductsDto,
+  ) {
+    return this.productsService.update(+productId, payload);
   }
 
   //eliminamos el producto

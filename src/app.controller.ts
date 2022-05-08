@@ -9,7 +9,7 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  
+
   //endpoints sin parametros basicos
 
   @Get('nuevo')
@@ -22,5 +22,4 @@ export class AppController {
   handleHello(): string {
     return 'con /sas/';
   }
-
 }
