@@ -9,8 +9,7 @@ export class UsersService {
   constructor(
     private productsService: ProductsService,
     private configService: ConfigService,
-  ) //@Inject('API_KEY') private apiKey: string,
-  {}
+  ) {}
 
   private counter = 1;
 
